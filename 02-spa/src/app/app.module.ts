@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 // Rutas
+import { RouterModule } from '@angular/router';
 import { app_routing } from './app.routes';
 
 // Servicios
@@ -23,6 +24,7 @@ import { from } from 'rxjs';
     HeroesComponent
   ],
   imports: [
+    RouterModule,
     BrowserModule,
     app_routing
   ],
