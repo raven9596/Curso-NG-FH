@@ -3,6 +3,14 @@
   margin-top: 20px;
 }
 
+.texto-justificado{
+  text-align: justify;
+}
+
+body{
+  padding-bottom: 50px;
+}
+
 /* Animaciones */
 
 .animated {

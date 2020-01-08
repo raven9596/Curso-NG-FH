@@ -7,6 +7,9 @@ import { app_routing } from './app.routes';
 
 // Servicios
 
+import { HeroesService } from './servicios/heroes.service';
+
+
 // Componentes
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './component/shared/navbar/navbar.component';
@@ -14,6 +17,7 @@ import { HomeComponent } from './component/home/home.component';
 import { AboutComponent } from './component/about/about.component';
 import { HeroesComponent } from './component/heroes/heroes.component';
 import { from } from 'rxjs';
+import { HeroeComponent } from './component/heroe/heroe.component';
 
 @NgModule({
   declarations: [
@@ -21,14 +25,17 @@ import { from } from 'rxjs';
     NavbarComponent,
     HomeComponent,
     AboutComponent,
-    HeroesComponent
+    HeroesComponent,
+    HeroeComponent
   ],
   imports: [
     RouterModule,
     BrowserModule,
     app_routing
   ],
-  providers: [],
+  providers: [
+    HeroesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
