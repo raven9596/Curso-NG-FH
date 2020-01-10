@@ -7,6 +7,14 @@
   text-align: justify;
 }
 
+.bio-heroe{
+  text-align: justify;
+}
+
+.casa-heroe {
+  width: 120px;
+}
+
 body{
   padding-bottom: 50px;
 }
