@@ -18,6 +18,7 @@ import { AboutComponent } from './component/about/about.component';
 import { HeroesComponent } from './component/heroes/heroes.component';
 import { from } from 'rxjs';
 import { HeroeComponent } from './component/heroe/heroe.component';
+import { BuscadorComponent } from './component/buscador/buscador.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HeroeComponent } from './component/heroe/heroe.component';
     HomeComponent,
     AboutComponent,
     HeroesComponent,
-    HeroeComponent
+    HeroeComponent,
+    BuscadorComponent
   ],
   imports: [
     RouterModule,
