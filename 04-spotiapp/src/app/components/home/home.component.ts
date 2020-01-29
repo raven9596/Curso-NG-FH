@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { SpotifyService } from '../../services/spotify.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { SpotifyService } from '../../services/spotify.service';
   templateUrl: './home.component.html',
   styles: []
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent  {
 
   nuevasCanciones: any[] = [];
 
@@ -14,12 +14,8 @@ export class HomeComponent implements OnInit {
 
 
     this.spotify.getNewReleases().subscribe( (data: any) => {
-      console.log(data.albums.items);
-      this.nuevasCanciones = data.albums.items;
-      
+      this.nuevasCanciones = data;
     });
   }
 
- 
-
-}
+} // end class
