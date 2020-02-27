@@ -3,6 +3,7 @@ import { DeseosService } from '../../services/deseos.service';
 import { ActivatedRoute } from '@angular/router';
 import { Lista } from '../../models/lista.model';
 import { ListaItem } from '../../models/lista-item.model';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-agregar',
@@ -11,11 +12,12 @@ import { ListaItem } from '../../models/lista-item.model';
 })
 export class AgregarPage {
 
+
   lista: Lista;
   nombreItem = '';
 
   constructor( private deseosService: DeseosService,
-               private route: ActivatedRoute ) { 
+               private route: ActivatedRoute) { 
 
     const listaId = this.route.snapshot.paramMap.get('listaId');
 
@@ -59,6 +61,7 @@ export class AgregarPage {
     this.lista.items.splice(i, 1);
     this.deseosService.guardarStorage();
   }
+
 
 
 } // End Class
