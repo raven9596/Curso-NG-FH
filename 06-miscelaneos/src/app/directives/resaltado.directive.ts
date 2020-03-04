@@ -6,7 +6,7 @@ import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 export class ResaltadoDirective {
 
   constructor( private el:ElementRef) {
-    console.log("Directiva llamada");
+    // console.log("Directiva llamada");
     // el.nativeElement.style.backgroundColor = "yellow";
 
   }
