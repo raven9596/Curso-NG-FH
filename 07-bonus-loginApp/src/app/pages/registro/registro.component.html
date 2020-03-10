@@ -1,4 +1,4 @@
-<div class="limiter">
+<div class="limiter animated fadeInRight">
         <div class="container-login100">
             <div class="wrap-login100 p-t-50 p-b-90">
 
@@ -11,7 +11,7 @@
                     </span>
 
                     <span *ngIf="f.submitted && f.controls['email'].errors"
-                          class="text-danger animated fadeIn">El correo es obligatorio</span>
+                          class="text-danger animated fadeIn">El correo es obligatorio.</span>
 
                     <div class="wrap-input100 m-b-16">
                         <input class="input100"
@@ -25,8 +25,9 @@
                         <span class="focus-input100"></span>
                     </div>
 
-                    <span *ngIf="f.submitted && f.controls['email'].errors"
-                          class="text-danger animated fadeIn">El nombre es obligatorio</span>
+                    <span *ngIf="f.submitted && f.controls['nombre'].errors"
+                          class="text-danger animated fadeIn">El nombre es obligatorio.</span>
+
                     <div class="wrap-input100 m-b-16">
                         <input class="input100"
                                type="text"
@@ -39,8 +40,10 @@
                         <span class="focus-input100"></span>
                     </div>
 
-                    <!-- <span class="text-danger">La contraseña debe de ser más de 6 letras</span> -->
-                    <div class="wrap-input100 m-b-16" data-validate = "Password is required">
+                    <span *ngIf="f.submitted && f.controls['password'].errors"
+                          class="text-danger animated fadeIn">Tiene que tener 6 caracteres minimo.</span>
+
+                    <div class="wrap-input100 m-b-16">
                         <input class="input100"
                                type="password"
                                name="password"
@@ -60,7 +63,7 @@
                         </div>
 
                         <div>
-                            <a routerLink="/registro" class="txt1">
+                            <a routerLink="/login" class="txt1">
                                 ¿Ya tienes cuenta? / Ingresar
                             </a>
                         </div>
