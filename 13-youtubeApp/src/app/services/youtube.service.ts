@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
+import { YoutubeResponse } from '../models/youtube.models';
+import { map } from 'rxjs/operators';
+
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +10,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 export class YoutubeService {
 
   private youtubrUrl = 'https://www.googleapis.com/youtube/v3';
-  private apikey = 'AIzaSyCMlyBz0S81Va0fGfrMZwC9PPVtKtOJ3kU';
+  private apikey = 'AIzaSyBp0MeQQLrnv4-e-kULuzSkuJ6N_6kXki0';
   private playlist = 'UUuaPTYj15JSkETGnEseaFFg';
   private nextPageToken = '';
 
@@ -19,10 +22,18 @@ export class YoutubeService {
 
     const params = new HttpParams()
       .set('part', 'snippet')
-      .set('maxResults', '10')
+      .set('maxResults', '5')
       .set('playlistId', this.playlist)
-      .set('key', this.apikey);
+      .set('key', this.apikey)
+      .set('pageToken', this.nextPageToken);
 
-    return this.http.get(url, { params });
+    return this.http.get<YoutubeResponse>(url, { params })
+      .pipe(
+        map(resp => {
+          this.nextPageToken = resp.nextPageToken;
+          return resp.items;
+        }),
+        map(items => items.map(video => video.snippet))
+      );
   }
 }
